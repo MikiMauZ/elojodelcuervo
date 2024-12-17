@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rituales - El Ojo del Cuervo</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .rituales-grid {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .ritual-card {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 25px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .ritual-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(201, 176, 55, 0.2);
+            background: rgba(74, 11, 114, 0.7);
+        }
+
+        .ritual-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--color-accent);
+        }
+
+        .ritual-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .ritual-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .ritual-meta {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(201, 176, 55, 0.3);
+            font-size: 0.9rem;
+            color: var(--color-accent);
+        }
+
+        .page-title {
+            text-align: center;
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3rem;
+            margin: 120px 0 20px;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--color-text);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="runas.html">Runas</a>
+                <a href="rituales.html" class="active">Rituales</a>
+                <a href="blog.html">Blog</a>
+                <a href="tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+
+    <h1 class="page-title">Rituales para el Bienestar</h1>
+    <p class="page-subtitle">Explora nuestros rituales para el equilibrio físico, mental y espiritual</p>
+
+    <div class="rituales-grid">
+        <a href="rituales/agradecimiento.html" class="ritual-card">
+            <div class="ritual-icon">🕯️</div>
+            <h2 class="ritual-title">Ritual de Agradecimiento</h2>
+            <p class="ritual-description">
+                Un ritual diario para cultivar la gratitud y reconocer las bendiciones en nuestra vida. Perfecto para comenzar o terminar el día con una mentalidad positiva.
+            </p>
+            <div class="ritual-meta">
+                Duración: 15-20 minutos ⋅ Dificultad: Fácil
+            </div>
+        </a>
+
+        <!-- Plantillas para futuros rituales -->
+        <a href="#" class="ritual-card" style="opacity: 0.7;">
+            <div class="ritual-icon">🌙</div>
+            <h2 class="ritual-title">Próximamente</h2>
+            <p class="ritual-description">
+                Nuevos rituales están en camino. Mantente atento a nuestras actualizaciones.
+            </p>
+            <div class="ritual-meta">
+                Próximamente
+            </div>
+        </a>
+
+        <a href="#" class="ritual-card" style="opacity: 0.7;">
+            <div class="ritual-icon">✨</div>
+            <h2 class="ritual-title">Próximamente</h2>
+            <p class="ritual-description">
+                Nuevos rituales están en camino. Mantente atento a nuestras actualizaciones.
+            </p>
+            <div class="ritual-meta">
+                Próximamente
+            </div>
+        </a>
+    </div>
+
+    <script>
+        // Menú móvil
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

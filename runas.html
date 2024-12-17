@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+    
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Ojo del Cuervo - Runas de la Bruja</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --color-primary: #2c0447;
+            --color-secondary: #4a0b72;
+            --color-accent: #c9b037;
+            --color-text: #e0d3f5;
+            --color-background: #1a0326;
+            --color-tapete: #1f0934;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--color-accent);
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-accent);
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: var(--color-background);
+            background-image: 
+                radial-gradient(circle at 50% 50%, #2a0940 0%, #1a0326 100%),
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23351259' fill-opacity='0.1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            padding: 20px;
+            color: var(--color-text);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+
+
+
+        .instrucciones {
+            color: var(--color-accent);
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+            font-family: 'MedievalSharp', cursive;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: var(--color-text);
+            opacity: 0.9;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tapete {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            position: relative;
+            background: radial-gradient(circle, #2c2c2c 0%, #1a1a1a 100%);
+            box-shadow: 
+                0 0 20px rgba(0,0,0,0.3),
+                inset 0 0 50px rgba(0,0,0,0.5);
+            border: 20px solid rgba(255,255,255,0.1);
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .tapete::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 700px;
+            background-image: url("LOGO EODC.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .runa {
+            position: absolute;
+            background-color: rgba(90, 13, 138, 0.9);
+            width: 100px;
+            height: 100px;
+            border-radius: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            border: 4px solid var(--color-accent);
+            box-shadow: 0 0 15px rgba(201, 176, 55, 1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+            z-index: 1;
+        }
+
+        @keyframes guiaGlow {
+            0% { 
+                box-shadow: 0 0 20px var(--color-accent);
+                filter: brightness(1);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 30px var(--color-accent),
+                    0 0 50px var(--color-accent),
+                    inset 0 0 20px var(--color-accent);
+                filter: brightness(1.3);
+            }
+            100% { 
+                box-shadow: 0 0 20px var(--color-accent);
+                filter: brightness(1);
+            }
+        }
+
+        .runa.guia {
+            animation: guiaGlow 2s infinite ease-in-out;
+            border-color: var(--color-accent);
+        }
+
+        .runa-simbolo {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .runa-nombre {
+            font-size: 1rem;
+            text-align: center;
+            padding: 0 5px;
+        }
+
+        .reading-result {
+            margin-top: 2rem;
+            padding: 20px;
+            background: rgba(44, 4, 71, 0.7);
+            border-radius: 10px;
+            border: 2px solid var(--color-accent);
+            box-shadow: 0 0 20px rgba(201, 176, 55, 0.1);
+        }
+
+        .reading-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .reading-text {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .runa-lectura {
+            margin-bottom: 1.5rem;
+            padding: 10px;
+            border-left: 3px solid var(--color-accent);
+            background: rgba(201, 176, 55, 0.05);
+        }
+
+        .runa-lectura.guia {
+            border-left-width: 5px;
+            background: rgba(201, 176, 55, 0.1);
+        }
+
+        .runa-lectura-titulo {
+            font-weight: bold;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .mystic-button {
+            padding: 12px 25px;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            font-family: 'Cinzel', serif;
+            border: 2px solid var(--color-accent);
+            background: var(--color-secondary);
+            color: var(--color-accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mystic-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(201, 176, 55, 0.1) 0%, transparent 60%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mystic-button:hover::before {
+            opacity: 1;
+        }
+
+        .mystic-button:hover {
+            background: var(--color-primary);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 15px rgba(201, 176, 55, 0.3);
+        }
+
+        @keyframes misticGlow {
+            0% { box-shadow: 0 0 5px rgba(201, 176, 55, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(201, 176, 55, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(201, 176, 55, 0.2); }
+        }
+
+        .runa:hover {
+            animation: misticGlow 2s infinite;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="runas.html">Runas</a>
+                <a href="rituales.html">Rituales</a>
+                <a href="blog.html">Blog</a>
+                <a href="tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+    
+    <script>
+    // Menú móvil
+    const menuButton = document.querySelector('.menu-button');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer click en un enlace
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Cerrar menú al hacer scroll
+    window.addEventListener('scroll', () => {
+        navMenu.classList.remove('active');
+    });
+    
+    // Marcar el enlace activo
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+    </script>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">El Ojo del Cuervo</h1>
+            <div class="subtitle">Las Runas Del Cuervo</div>
+        </div>
+
+        <div class="controls">
+            <button id="lanzarBtn" class="mystic-button">Lanzar Runas</button>
+            <button id="reiniciarBtn" class="mystic-button">Reiniciar</button>
+        </div>
+
+        <div class="game-area">
+            <div id="tapete" class="tapete"></div>
+        </div>
+
+        <div id="readingResult" class="reading-result">
+            <h2 class="reading-title">Tu lectura</h2>
+            <div id="readingText" class="reading-text"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const RUNAS = {
+            CUERVO: { nombre: 'El Cuervo', simbolo: '🦅', positiva: 'Sabiduría, guía y mensajes importantes', neutra: 'Apertura a mensajes no claros', desafiante: 'Falta de dirección' },
+            OJO: { nombre: 'El Ojo', simbolo: '👁️', positiva: 'Intuición y percepción clara', neutra: 'La intuición está activa', desafiante: 'Falta de claridad' },
+            PLUMA: { nombre: 'La Pluma', simbolo: '🪶', positiva: 'Ligereza, comunicación', neutra: 'Momento de equilibrio', desafiante: 'Estancamiento' },
+            LUNA: { nombre: 'La Luna', simbolo: '🌙', positiva: 'Conexión emocional profunda', neutra: 'Introspección necesaria', desafiante: 'Confusión emocional' },
+            SOL: { nombre: 'El Sol', simbolo: '☀️', positiva: 'Vitalidad y éxito', neutra: 'Claridad en camino', desafiante: 'Falta de energía' },
+            VIENTO: { nombre: 'El Viento', simbolo: '🌪️', positiva: 'Cambio fluido', neutra: 'Cambio presente', desafiante: 'Resistencia al cambio' },
+            PUENTE: { nombre: 'El Puente', simbolo: '🌉', positiva: 'Conexión y unión', neutra: 'Formando conexiones', desafiante: 'Ruptura de conexiones' },
+            BOSQUE: { nombre: 'El Bosque', simbolo: '🌳', positiva: 'Exploración y descubrimiento', neutra: 'Terreno inexplorado', desafiante: 'Pérdida de dirección' },
+            ESPEJO: { nombre: 'El Espejo', simbolo: '🪞', positiva: 'Reflexión honesta', neutra: 'Observación neutral', desafiante: 'Autoengaño' },
+            MASCARA: { nombre: 'La Máscara', simbolo: '🎭', positiva: 'Protección necesaria', neutra: 'Cuestionamiento', desafiante: 'Engaño' },
+            RAYO: { nombre: 'El Rayo', simbolo: '⚡', positiva: 'Revelación transformadora', neutra: 'Cambio en proceso', desafiante: 'Cambios caóticos' },
+            ANILLO: { nombre: 'El Anillo', simbolo: '💍', positiva: 'Unión y compromiso', neutra: 'Ciclo en transición', desafiante: 'Ruptura de ciclos' },
+            TORMENTA: { nombre: 'La Tormenta', simbolo: '🌩️', positiva: 'Renovación profunda', neutra: 'Caos con propósito', desafiante: 'Destrucción sin rumbo' },
+            CORAZON: { nombre: 'El Corazón', simbolo: '❤️', positiva: 'Conexión emocional y amor', neutra: 'Emociones presentes', desafiante: 'Bloqueo emocional' },
+            MENTE: { nombre: 'La Mente', simbolo: '🧠', positiva: 'Claridad y decisión', neutra: 'Análisis en proceso', desafiante: 'Confusión mental' }
+        };
+        
+        class RunaManager {
+            constructor() {
+                this.runas = [];
+                this.runasExcluidas = [];
+                this.animating = false;
+                this.tapete = document.getElementById('tapete');
+                this.frameId = null;
+                this.runaGuia = null;
+                this.TAMANO_RUNA = 80;
+                this.FRICCION = 0.92;
+                this.ELASTICIDAD = 0.3;
+                this.PROBABILIDAD_RUNAS = {
+                    1: 5,
+                    2: 15,
+                    3: 30,
+                    4: 30,
+                    5: 15,
+                    6: 5
+                };
+        
+                // Sonidos
+                this.sonidoLanzamiento = new Audio('sonido-lanzamiento.mp3');
+                this.sonidoImpacto = new Audio('sonido-impacto.mp3');
+            }
+        
+            seleccionarNumeroRunas() {
+                const total = Object.values(this.PROBABILIDAD_RUNAS).reduce((a, b) => a + b, 0);
+                let random = Math.random() * total;
+                
+                for (const [num, prob] of Object.entries(this.PROBABILIDAD_RUNAS)) {
+                    if (random < prob) return parseInt(num);
+                    random -= prob;
+                }
+                return 3;
+            }
+        
+            seleccionarRunas() {
+                const runasDisponibles = Object.keys(RUNAS);
+                const runasBarajadas = [...runasDisponibles].sort(() => Math.random() - 0.5);
+                const numeroRunasEnTapete = this.seleccionarNumeroRunas();
+                
+                return {
+                    enTapete: runasBarajadas.slice(0, numeroRunasEnTapete),
+                    excluidas: runasBarajadas.slice(numeroRunasEnTapete)
+                };
+            }
+        
+            crearElementoRuna(runaKey, excluida = false) {
+                const runaInfo = RUNAS[runaKey];
+                const elemento = document.createElement('div');
+                elemento.className = 'runa' + (excluida ? ' excluida' : '');
+                
+                const simbolo = document.createElement('div');
+                simbolo.className = 'runa-simbolo';
+                simbolo.textContent = runaInfo.simbolo;
+                
+                const nombre = document.createElement('div');
+                nombre.className = 'runa-nombre';
+                nombre.textContent = runaInfo.nombre;
+                
+                elemento.appendChild(simbolo);
+                elemento.appendChild(nombre);
+                
+                if (!excluida) {
+                    this.tapete.appendChild(elemento);
+                }
+                
+                return elemento;
+            }
+        
+            actualizarPosicion(runa) {
+                runa.x += runa.velocidadX;
+                runa.y += runa.velocidadY;
+                
+                runa.velocidadX *= this.FRICCION;
+                runa.velocidadY *= this.FRICCION;
+                
+                const centroX = this.tapete.clientWidth / 2;
+                const centroY = this.tapete.clientHeight / 2;
+                const radio = Math.min(centroX, centroY) - this.TAMANO_RUNA / 2;
+                
+                if (!runa.excluida) {
+                    const dx = runa.x + this.TAMANO_RUNA / 2 - centroX;
+                    const dy = runa.y + this.TAMANO_RUNA / 2 - centroY;
+                    const distancia = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distancia > radio) {
+                        const angulo = Math.atan2(dy, dx);
+                        runa.x = centroX + Math.cos(angulo) * radio - this.TAMANO_RUNA / 2;
+                        runa.y = centroY + Math.sin(angulo) * radio - this.TAMANO_RUNA / 2;
+                        
+                        const normalX = dx / distancia;
+                        const normalY = dy / distancia;
+                        const dot = runa.velocidadX * normalX + runa.velocidadY * normalY;
+                        
+                        runa.velocidadX = (runa.velocidadX - 2 * dot * normalX) * this.ELASTICIDAD;
+                        runa.velocidadY = (runa.velocidadY - 2 * dot * normalY) * this.ELASTICIDAD;
+                        
+                        // Reproducir sonido de impacto
+                        this.sonidoImpacto.currentTime = 0;
+                        this.sonidoImpacto.play().catch(() => {});
+                    }
+                }
+                
+                runa.rotacion += runa.velocidadRotacion;
+                runa.velocidadRotacion *= 0.9;
+                
+                runa.elemento.style.transform = 
+                    `translate(${runa.x}px, ${runa.y}px) rotate(${runa.rotacion}deg)`;
+            }
+        
+            manejarColisiones() {
+                for (let i = 0; i < this.runas.length; i++) {
+                    for (let j = i + 1; j < this.runas.length; j++) {
+                        const runa1 = this.runas[i];
+                        const runa2 = this.runas[j];
+                        
+                        const dx = runa2.x - runa1.x;
+                        const dy = runa2.y - runa1.y;
+                        const distancia = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distancia < this.TAMANO_RUNA) {
+                            const angulo = Math.atan2(dy, dx);
+                            const impacto = (this.TAMANO_RUNA - distancia) * this.ELASTICIDAD;
+                            
+                            const cos = Math.cos(angulo);
+                            const sin = Math.sin(angulo);
+                            
+                            runa1.velocidadX -= cos * impacto;
+                            runa1.velocidadY -= sin * impacto;
+                            runa2.velocidadX += cos * impacto;
+                            runa2.velocidadY += sin * impacto;
+                            
+                            const rotacionImpacto = impacto * (Math.random() * 0.5 - 0.25);
+                            runa1.velocidadRotacion += rotacionImpacto;
+                            runa2.velocidadRotacion -= rotacionImpacto;
+                            
+                            // Reproducir sonido de impacto
+                            this.sonidoImpacto.currentTime = 0;
+                            this.sonidoImpacto.play().catch(() => {});
+                        }
+                    }
+                }
+            }
+        
+            determinarRunaGuia() {
+                let runaGuia = this.runas[0];
+                for (const runa of this.runas) {
+                    if (!runa.excluida && runa.y < runaGuia.y) {
+                        runaGuia = runa;
+                    }
+                }
+                return runaGuia;
+            }
+        
+            generarLectura() {
+                const readingText = document.getElementById('readingText');
+                readingText.innerHTML = '';
+                
+                const runasEnTapete = this.runas.filter(runa => !runa.excluida);
+                if (runasEnTapete.length === 0) return;
+                
+                const runaGuia = this.determinarRunaGuia();
+                const runaGuiaInfo = RUNAS[runaGuia.runaKey];
+                
+                // Mostrar la runa guía
+                const lecturaGuia = document.createElement('div');
+                lecturaGuia.className = 'runa-lectura guia';
+                lecturaGuia.innerHTML = `
+                    <div class="runa-lectura-titulo">
+                        ${runaGuiaInfo.simbolo} ${runaGuiaInfo.nombre} (Runa Guía)
+                    </div>
+                    <div>
+                        <p><strong>Aspecto Positivo:</strong> ${runaGuiaInfo.positiva}</p>
+                        <p><strong>Aspecto Neutro:</strong> ${runaGuiaInfo.neutra}</p>
+                        <p><strong>Aspecto Desafiante:</strong> ${runaGuiaInfo.desafiante}</p>
+                    </div>
+                `;
+                readingText.appendChild(lecturaGuia);
+                
+                // Mostrar las runas acompañantes
+                runasEnTapete
+                    .filter(runa => runa !== runaGuia)
+                    .forEach(runa => {
+                        const runaInfo = RUNAS[runa.runaKey];
+                        const lecturaRuna = document.createElement('div');
+                        lecturaRuna.className = 'runa-lectura';
+                        lecturaRuna.innerHTML = `
+                            <div class="runa-lectura-titulo">
+                                ${runaInfo.simbolo} ${runaInfo.nombre}
+                            </div>
+                            <div>
+                                <p><strong>Aspecto Positivo:</strong> ${runaInfo.positiva}</p>
+                                <p><strong>Aspecto Neutro:</strong> ${runaInfo.neutra}</p>
+                                <p><strong>Aspecto Desafiante:</strong> ${runaInfo.desafiante}</p>
+                            </div>
+                        `;
+                        readingText.appendChild(lecturaRuna);
+                    });
+        
+                
+                // Guardar la tirada actual
+                window.tiradaActual = {
+                    runaGuia: {
+                        nombre: runaGuiaInfo.nombre,
+                        simbolo: runaGuiaInfo.simbolo,
+                        positiva: runaGuiaInfo.positiva,
+                        neutra: runaGuiaInfo.neutra,
+                        desafiante: runaGuiaInfo.desafiante
+                    },
+                    runasAcompanantes: runasEnTapete
+                        .filter(runa => runa !== runaGuia)
+                        .map(runa => ({
+                            nombre: RUNAS[runa.runaKey].nombre,
+                            simbolo: RUNAS[runa.runaKey].simbolo,
+                            positiva: RUNAS[runa.runaKey].positiva,
+                            neutra: RUNAS[runa.runaKey].neutra,
+                            desafiante: RUNAS[runa.runaKey].desafiante
+                        }))
+                };
+            }
+        
+            animar() {
+                if (!this.animating) return;
+                
+                this.runas.forEach(runa => this.actualizarPosicion(runa));
+                this.manejarColisiones();
+                
+                const movimientoTerminado = this.runas.every(runa => 
+                    Math.abs(runa.velocidadX) < 0.1 && 
+                    Math.abs(runa.velocidadY) < 0.1 && 
+                    Math.abs(runa.velocidadRotacion) < 0.1
+                );
+                
+                if (movimientoTerminado) {
+                    this.animating = false;
+                    document.getElementById('lanzarBtn').disabled = false;
+                    
+                    const runasEnTapete = this.runas.filter(runa => !runa.excluida);
+                    const runaGuia = this.determinarRunaGuia();
+                    
+                    this.runas.forEach(runa => {
+                        runa.elemento.classList.remove('guia');
+                        if (runa === runaGuia) {
+                            runa.elemento.classList.add('guia');
+                        }
+                    });
+                    
+                    this.generarLectura();
+                } else {
+                    this.frameId = requestAnimationFrame(() => this.animar());
+                }
+            }
+        
+            lanzarRunas() {
+        if (this.animating) return;
+        
+        this.reiniciar();
+        this.animating = true;
+        document.getElementById('lanzarBtn').disabled = true;
+        
+        // Reproducir sonido de lanzamiento
+        this.sonidoLanzamiento.currentTime = 0;
+        this.sonidoLanzamiento.play().catch(() => {});
+        
+        const { enTapete, excluidas } = this.seleccionarRunas();
+        
+        const centroX = this.tapete.clientWidth / 2 - this.TAMANO_RUNA / 2;
+        const centroY = this.tapete.clientHeight / 2 - this.TAMANO_RUNA / 2;
+        const fuerzaDispersion = 12;
+        
+        // Lanzar runas en el tapete
+        enTapete.forEach(runaKey => {
+            const elemento = this.crearElementoRuna(runaKey);
+            const angulo = Math.random() * Math.PI * 2;
+            const fuerza = fuerzaDispersion * (0.8 + Math.random() * 0.4);
+            
+            this.runas.push({
+                runaKey,
+                elemento,
+                x: centroX + (Math.random() - 0.5) * 20,
+                y: centroY + (Math.random() - 0.5) * 20,
+                velocidadX: Math.cos(angulo) * fuerza,
+                velocidadY: Math.sin(angulo) * fuerza,
+                rotacion: Math.random() * 360,
+                velocidadRotacion: (Math.random() - 0.5) * 20,
+                excluida: false
+            });
+        });
+        
+        this.animar();
+    }
+
+    reiniciar() {
+        this.animating = false;
+        if (this.frameId) {
+            cancelAnimationFrame(this.frameId);
+        }
+        
+        this.runas.forEach(runa => runa.elemento.remove());
+        this.runas = [];
+        
+        document.getElementById('lanzarBtn').disabled = false;
+        document.getElementById('readingText').innerHTML = '';
+        
+    
+    }
+}
+
+// Inicialización y event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const runaManager = new RunaManager();
+    
+    document.getElementById('lanzarBtn').addEventListener('click', () => {
+        runaManager.lanzarRunas();
+    });
+    
+    document.getElementById('reiniciarBtn').addEventListener('click', () => {
+        runaManager.reiniciar();
+    });
+
+    
+    // Sonido de hover en botones
+    const sonidoHover = new Audio('sonido-hover.mp3');
+    
+    botones.forEach(boton => {
+        boton.addEventListener('mouseenter', () => {
+            sonidoHover.currentTime = 0;
+            sonidoHover.play().catch(() => {});
+        });
+    });
+});
+</script>

@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">El Ojo del Cuervo</a>
+        <nav class="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="runas.html">Runas</a>
+            <a href="rituales.html">Rituales</a>
+            <a href="blog.html">Blog</a>
+            <a href="tiktok.html">TikTok</a>
+        </nav>
+        <button class="menu-button">☰</button>
+    </div>
+</header>
+
+<script>
+// Menú móvil
+const menuButton = document.querySelector('.menu-button');
+const navMenu = document.querySelector('.nav-menu');
+
+menuButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Cerrar menú al hacer click en un enlace
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// Cerrar menú al hacer scroll
+window.addEventListener('scroll', () => {
+    navMenu.classList.remove('active');
+});
+
+// Marcar el enlace activo
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
+</script>

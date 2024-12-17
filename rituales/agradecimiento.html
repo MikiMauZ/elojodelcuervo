@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritual de Agradecimiento - El Ojo del Cuervo</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ritual-container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ritual-content {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .ritual-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ritual-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .ritual-intro {
+            color: var(--color-text);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 1px solid var(--color-accent);
+            padding-bottom: 0.5rem;
+        }
+
+        .ritual-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ritual-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .ritual-list li::before {
+            content: '✧';
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .ritual-quote {
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            margin: 2rem 0;
+            background: rgba(201, 176, 55, 0.1);
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .ritual-tips {
+            background: rgba(74, 11, 114, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-text);
+        }
+
+        .duration-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 176, 55, 0.1);
+            border: 1px solid var(--color-accent);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .ritual-container {
+                padding: 15px;
+            }
+
+            .ritual-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="../index.html">Inicio</a>
+                <a href="../runas.html">Runas</a>
+                <a href="../rituales.html" class="active">Rituales</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="ritual-container">
+        <a href="../rituales.html" class="back-link">← Volver a Rituales</a>
+        
+        <div class="ritual-content">
+            <div class="ritual-hero">
+                <h1 class="ritual-title">Ritual de Agradecimiento</h1>
+                <div class="duration-badge">Duración: 15-20 minutos ⋅ Dificultad: Fácil</div>
+            </div>
+
+            <div class="ritual-intro">
+                El ritual de agradecimiento es una práctica poderosa que nos ayuda a reconocer y apreciar las bendiciones en nuestra vida. Al cultivar la gratitud diariamente, transformamos nuestra perspectiva y atraemos más experiencias positivas.
+            </div>
+
+            <h2 class="section-title">🕯️ Preparación</h2>
+            <ul class="ritual-list">
+                <li>Una vela blanca</li>
+                <li>Un cuaderno y bolígrafo</li>
+                <li>Tu bebida favorita (té, café, agua)</li>
+                <li>Un espacio tranquilo y cómodo</li>
+                <li>Opcional: incienso o música suave</li>
+            </ul>
+
+            <h2 class="section-title">✨ Pasos del Ritual</h2>
+            <ul class="ritual-list">
+                <li>Encuentra un momento tranquilo del día donde no serás interrumpido/a</li>
+                <li>Enciende la vela con intención, visualizando luz y positividad</li>
+                <li>Toma tres respiraciones profundas para centrarte</li>
+                <li>En tu cuaderno, escribe la fecha y tres cosas por las que estés agradecido/a hoy</li>
+                <li>Para cada una, toma un momento para sentir genuinamente esa gratitud</li>
+                <li>Disfruta tu bebida mientras reflexionas sobre estos momentos de gratitud</li>
+                <li>Cierra el ritual agradeciendo a la vida y a ti mismo/a por este momento</li>
+            </ul>
+
+            <div class="ritual-quote">
+                "La gratitud transforma lo que tenemos en suficiente, y más. Convierte la negación en aceptación, el caos en orden, la confusión en claridad..."
+            </div>
+
+            <div class="ritual-tips">
+                <h2 class="section-title">💫 Consejos y Variaciones</h2>
+                <ul class="ritual-list">
+                    <li>Realiza el ritual al despertar para comenzar el día con gratitud</li>
+                    <li>También puedes hacerlo antes de dormir para reflexionar sobre tu día</li>
+                    <li>No hay agradecimientos pequeños - todo cuenta</li>
+                    <li>Si te sientes inspirado/a, puedes escribir más de tres cosas</li>
+                    <li>Los fines de semana, toma más tiempo para revisar tus entradas de la semana</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
