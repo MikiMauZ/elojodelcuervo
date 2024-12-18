@@ -20,6 +20,53 @@ body {
     line-height: 1.6;
 }
 
+/* Títulos */
+.post-title {
+    color: var(--color-accent);
+    font-family: 'MedievalSharp', cursive; /* Mantiene el estilo místico */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+    text-transform: none; /* Evita las mayúsculas */
+}
+
+.post-content h2 {
+    color: var(--color-accent);
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-transform: none; /* Evita las mayúsculas */
+}
+
+/* Contenido */
+.post-content p {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-transform: none; /* Evita las mayúsculas */
+}
+
+.quote {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    text-align: center;
+    margin: 2rem 0;
+    padding: 20px;
+    text-transform: none; /* Evita las mayúsculas */
+}
+
+/* Meta información */
+.post-meta {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-transform: none; /* Evita las mayúsculas */
+}
+
 /* Header y navegación */
 .header {
     position: fixed;

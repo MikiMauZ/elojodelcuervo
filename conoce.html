@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Runas del Cuervo - Significados</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .runas-container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .page-subtitle {
+            color: var(--color-text);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .runas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .runa-card {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .runa-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(201, 176, 55, 0.2);
+        }
+
+        .runa-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        .runa-simbolo {
+            font-size: 3rem;
+            color: var(--color-accent);
+        }
+
+        .runa-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .aspectos-title {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            margin: 15px 0 10px;
+        }
+
+        .aspecto {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .aspecto::before {
+            content: '✧';
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .descripcion {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .significado-adicional {
+            background: rgba(201, 176, 55, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .runas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .runa-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="runas.html">Runas</a>
+                <a href="rituales.html">Rituales</a>
+                <a href="blog.html">Blog</a>
+                <a href="tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="runas-container">
+        <div class="intro-section">
+            <h1 class="page-title">Las Runas del Cuervo</h1>
+            <p class="page-subtitle">
+                Descubre el significado profundo de cada runa y su influencia en nuestra búsqueda del equilibrio entre lo físico, lo mental y lo espiritual.
+            </p>
+        </div>
+
+        <div class="runas-grid">
+            <!-- El Cuervo -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🦅</div>
+                    <h2 class="runa-title">El Cuervo</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Cuervo representa la sabiduría ancestral y la guía espiritual. Como mensajero entre mundos, nos ayuda a ver más allá de lo aparente y a comprender mensajes importantes en nuestra vida.
+                </div>
+
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Sabiduría, guía y mensajes importantes
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Apertura a mensajes no claros
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Falta de dirección
+                </div>
+
+                <div class="significado-adicional">
+                    "El Cuervo nos recuerda que la sabiduría está presente en cada momento, solo necesitamos estar atentos para percibirla."
+                </div>
+            </div>
+
+            <!-- El Ojo -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">👁️</div>
+                    <h2 class="runa-title">El Ojo</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Ojo simboliza la percepción intuitiva y la visión clara. Representa nuestra capacidad de ver más allá de las apariencias y conectar con nuestra sabiduría interior.
+                </div>
+
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Intuición y percepción clara
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> La intuición está activa
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Falta de claridad
+                </div>
+
+                <div class="significado-adicional">
+                    "El Ojo nos invita a confiar en nuestra intuición y a ver la verdad que reside en nuestro interior."
+                </div>
+            </div>
+
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🪶</div>
+                    <h2 class="runa-title">La Pluma</h2>
+                </div>
+                
+                <div class="descripcion">
+                    La Pluma representa la ligereza y la comunicación fluida. Nos recuerda la importancia de mantener un equilibrio delicado entre nuestras palabras y acciones.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Ligereza, comunicación
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Momento de equilibrio
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Estancamiento
+                </div>
+            
+                <div class="significado-adicional">
+                    "La Pluma nos enseña que la verdadera comunicación requiere tanto hablar como escuchar con el corazón."
+                </div>
+            </div>
+            
+            <!-- La Luna -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🌙</div>
+                    <h2 class="runa-title">La Luna</h2>
+                </div>
+                
+                <div class="descripcion">
+                    La Luna simboliza nuestro mundo emocional y los ciclos naturales de la vida. Representa la intuición profunda y los misterios del subconsciente.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Conexión emocional profunda
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Introspección necesaria
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Confusión emocional
+                </div>
+            
+                <div class="significado-adicional">
+                    "La Luna nos invita a abrazar nuestras emociones y a encontrar sabiduría en los ciclos de cambio."
+                </div>
+            </div>
+            
+            <!-- El Sol -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">☀️</div>
+                    <h2 class="runa-title">El Sol</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Sol representa la luz interior, la vitalidad y la claridad mental. Es un símbolo de poder personal y autoconfianza.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Vitalidad y éxito
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Claridad en camino
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Falta de energía
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Sol nos recuerda que cada uno de nosotros tiene un brillo único que compartir con el mundo."
+                </div>
+            </div>
+            
+            <!-- El Viento -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🌪️</div>
+                    <h2 class="runa-title">El Viento</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Viento simboliza el cambio y el movimiento constante. Nos recuerda que la vida está en constante flujo y que debemos adaptarnos.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Cambio fluido
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Cambio presente
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Resistencia al cambio
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Viento nos enseña que la flexibilidad es una forma de fortaleza."
+                </div>
+            </div>
+            
+            <!-- El Puente -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🌉</div>
+                    <h2 class="runa-title">El Puente</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Puente representa las conexiones y transiciones en nuestra vida. Simboliza la capacidad de unir diferentes aspectos de nosotros mismos y de conectar con otros.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Conexión y unión
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Formando conexiones
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Ruptura de conexiones
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Puente nos recuerda que cada paso nos acerca a nuestro destino."
+                </div>
+            </div>
+            
+            <!-- El Bosque -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🌳</div>
+                    <h2 class="runa-title">El Bosque</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Bosque representa el misterio y la exploración personal. Simboliza los caminos inexplorados y las oportunidades de crecimiento.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Exploración y descubrimiento
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Terreno inexplorado
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Pérdida de dirección
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Bosque nos invita a adentrarnos en lo desconocido con valentía y curiosidad."
+                </div>
+            </div>
+            
+            <!-- El Espejo -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🪞</div>
+                    <h2 class="runa-title">El Espejo</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Espejo representa la auto-reflexión y el conocimiento personal. Nos muestra nuestra verdadera naturaleza y las verdades que debemos enfrentar.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Reflexión honesta
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Observación neutral
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Autoengaño
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Espejo nos muestra que la verdad más importante es la que encontramos en nosotros mismos."
+                </div>
+            </div>
+            
+            <!-- La Máscara -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🎭</div>
+                    <h2 class="runa-title">La Máscara</h2>
+                </div>
+                
+                <div class="descripcion">
+                    La Máscara simboliza las diferentes facetas de nuestra personalidad y los roles que adoptamos. Representa la protección y la adaptación social.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Protección necesaria
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Cuestionamiento
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Engaño
+                </div>
+            
+                <div class="significado-adicional">
+                    "La Máscara nos enseña que a veces necesitamos protegernos, pero no debemos perder nuestra esencia."
+                </div>
+            </div>
+            
+            <!-- El Rayo -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">⚡</div>
+                    <h2 class="runa-title">El Rayo</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Rayo representa la iluminación súbita y los cambios repentinos. Simboliza momentos de claridad y transformación instantánea.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Revelación transformadora
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Cambio en proceso
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Cambios caóticos
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Rayo nos recuerda que las transformaciones más profundas a veces llegan sin aviso."
+                </div>
+            </div>
+            
+            <!-- El Anillo -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">💍</div>
+                    <h2 class="runa-title">El Anillo</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Anillo representa los ciclos de la vida y los compromisos que asumimos. Simboliza la continuidad y la conexión eterna.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Unión y compromiso
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Ciclo en transición
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Ruptura de ciclos
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Anillo nos recuerda que cada final es un nuevo comienzo."
+                </div>
+            </div>
+            
+            <!-- La Tormenta -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🌩️</div>
+                    <h2 class="runa-title">La Tormenta</h2>
+                </div>
+                
+                <div class="descripcion">
+                    La Tormenta representa los periodos de caos y limpieza energética. Simboliza la purificación y la renovación a través del caos.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Renovación profunda
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Caos con propósito
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Destrucción sin rumbo
+                </div>
+            
+                <div class="significado-adicional">
+                    "La Tormenta nos enseña que después del caos siempre viene la calma."
+                </div>
+            </div>
+            
+            <!-- El Corazón -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">❤️</div>
+                    <h2 class="runa-title">El Corazón</h2>
+                </div>
+                
+                <div class="descripcion">
+                    El Corazón representa nuestro centro emocional y nuestra capacidad de amar. Simboliza la conexión emocional y la autenticidad.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Conexión emocional y amor
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Emociones presentes
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Bloqueo emocional
+                </div>
+            
+                <div class="significado-adicional">
+                    "El Corazón nos recuerda que el amor es la fuerza más transformadora."
+                </div>
+            </div>
+            
+            <!-- La Mente -->
+            <div class="runa-card">
+                <div class="runa-header">
+                    <div class="runa-simbolo">🧠</div>
+                    <h2 class="runa-title">La Mente</h2>
+                </div>
+                
+                <div class="descripcion">
+                    La Mente representa nuestro intelecto y capacidad de análisis. Simboliza la claridad mental y el poder del pensamiento.
+                </div>
+            
+                <h3 class="aspectos-title">Aspectos</h3>
+                <div class="aspecto">
+                    <strong>Positivo:</strong> Claridad y decisión
+                </div>
+                <div class="aspecto">
+                    <strong>Neutro:</strong> Análisis en proceso
+                </div>
+                <div class="aspecto">
+                    <strong>Desafiante:</strong> Confusión mental
+                </div>
+            
+                <div class="significado-adicional">
+                    "La Mente nos enseña que el pensamiento claro ilumina el camino hacia la sabiduría."
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

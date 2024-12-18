@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - El Ojo del Cuervo</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+    
+        .blog-container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .blog-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .blog-subtitle {
+            color: var(--color-text);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: var(--color-text);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(201, 176, 55, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: rgba(74, 11, 114, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-date {
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-card-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-excerpt {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .blog-tag {
+            background: rgba(201, 176, 55, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--color-accent);
+        }
+
+        .categories {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .category-button {
+            background: var(--color-secondary);
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-button:hover {
+            background: var(--color-primary);
+            box-shadow: 0 0 10px rgba(201, 176, 55, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="runas.html">Runas</a>
+                <a href="rituales.html">Rituales</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1 class="blog-title">El Blog del Cuervo</h1>
+            <p class="blog-subtitle">
+                Reflexiones sobre el bienestar emocional, equilibrio y crecimiento personal
+            </p>
+        </div>
+
+        <div class="categories">
+            <button class="category-button">Todos</button>
+            <button class="category-button">Bienestar</button>
+            <button class="category-button">Reflexiones</button>
+            <button class="category-button">Experiencias</button>
+            <button class="category-button">Guías</button>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Entrada de Blog 1 -->
+            <a href="blog/encontrando-equilibrio.html" class="blog-card">
+                <div class="blog-image">
+                    <img src="blog\images\serene-balance-triangle-mental-physical-spiritual.jpg" alt="Equilibrio">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">18 Diciembre, 2024</div>
+                    <h2 class="blog-card-title">Encontrando el Equilibrio</h2>
+                    <p class="blog-excerpt">
+                        Descubre cómo mantener el equilibrio entre lo físico, mental y espiritual en el mundo moderno...
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Bienestar</span>
+                        <span class="blog-tag">Equilibrio</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Más entradas de blog... -->
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

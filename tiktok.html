@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok - El Ojo del Cuervo</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tiktok-container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+
+        .page-subtitle {
+            color: var(--color-text);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .tiktok-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--color-secondary);
+            color: var(--color-accent);
+            text-decoration: none;
+            border: 2px solid var(--color-accent);
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-button:hover {
+            background: var(--color-primary);
+            box-shadow: 0 0 15px rgba(201, 176, 55, 0.3);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .videos-section, .schedule-section {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .section-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+
+        .video-card {
+            background: rgba(74, 11, 114, 0.3);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: #000;
+            position: relative;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            opacity: 0.9;
+        }
+
+        .schedule-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(201, 176, 55, 0.1);
+            border-radius: 8px;
+        }
+
+        .schedule-date {
+            color: var(--color-accent);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .schedule-topic {
+            color: var(--color-text);
+            font-size: 1.1rem;
+        }
+
+        .topics-section {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            grid-column: 1 / -1;
+        }
+
+        .topic-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .topic-item {
+            background: rgba(74, 11, 114, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--color-accent);
+        }
+
+        .topic-icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="runas.html">Runas</a>
+                <a href="rituales.html">Rituales</a>
+                <a href="blog.html">Blog</a>
+                <a href="tiktok.html" class="active">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="tiktok-container">
+        <div class="hero-section">
+            <h1 class="page-title">El Ojo del Cuervo en TikTok</h1>
+            <p class="page-subtitle">
+                Explora rituales, lecturas de runas y consejos para el bienestar emocional. 
+                Únete a nuestra comunidad y descubre cómo encontrar equilibrio en tu vida.
+            </p>
+            <a href="#" class="tiktok-button">Sígueme en TikTok ✨</a>
+        </div>
+
+        <div class="content-grid">
+            <div class="videos-section">
+                <h2 class="section-title">Videos Destacados</h2>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@elojodelcuervowicca/video/7441508537370463520" data-video-id="7441508537370463520" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@elojodelcuervowicca" href="https://www.tiktok.com/@elojodelcuervowicca?refer=embed">@elojodelcuervowicca</a> ✧ El ritual de GRATITUD que cambiará tu vida 👇🏿 👇🏿  Guarda este ritual YA 🌙 (Lo agradecerás después) ✨ <a title="witchtok" target="_blank" href="https://www.tiktok.com/tag/witchtok?refer=embed">#WitchTok</a> <a title="brujatiktok" target="_blank" href="https://www.tiktok.com/tag/brujatiktok?refer=embed">#Brujatiktok</a> <a title="ritual" target="_blank" href="https://www.tiktok.com/tag/ritual?refer=embed">#Ritual</a> <a title="brujasmexico" target="_blank" href="https://www.tiktok.com/tag/brujasmexico?refer=embed">#BrujasMexico</a> <a title="brujasespaña" target="_blank" href="https://www.tiktok.com/tag/brujasespa%C3%B1a?refer=embed">#BrujasEspaña</a> <a title="brujaslatinas" target="_blank" href="https://www.tiktok.com/tag/brujaslatinas?refer=embed">#BrujasLatinas</a> <a title="bruja" target="_blank" href="https://www.tiktok.com/tag/bruja?refer=embed">#Bruja</a> <a title="magia" target="_blank" href="https://www.tiktok.com/tag/magia?refer=embed">#Magia</a> <a title="ritualdeabundancia" target="_blank" href="https://www.tiktok.com/tag/ritualdeabundancia?refer=embed">#RitualDeAbundancia</a> <a title="espiritualidad" target="_blank" href="https://www.tiktok.com/tag/espiritualidad?refer=embed">#Espiritualidad</a> <a title="magiapractica" target="_blank" href="https://www.tiktok.com/tag/magiapractica?refer=embed">#MagiaPractica</a> <a title="hechizosyrituales" target="_blank" href="https://www.tiktok.com/tag/hechizosyrituales?refer=embed">#HechizosYRituales</a> <a title="wicca" target="_blank" href="https://www.tiktok.com/tag/wicca?refer=embed">#Wicca</a> <a title="brujamoderna" target="_blank" href="https://www.tiktok.com/tag/brujamoderna?refer=embed">#BrujaModerna</a> <a title="parati" target="_blank" href="https://www.tiktok.com/tag/parati?refer=embed">#ParaTi</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#FYP</a> <a title="aprendeentiktok" target="_blank" href="https://www.tiktok.com/tag/aprendeentiktok?refer=embed">#AprendeEnTikTok</a> <a title="brujeriaparaprincipiantes" target="_blank" href="https://www.tiktok.com/tag/brujeriaparaprincipiantes?refer=embed">#BrujeriaParaPrincipiantes</a> <a title="elojodelcuervo" target="_blank" href="https://www.tiktok.com/tag/elojodelcuervo?refer=embed">#ElOjoDelCuervo</a> <a title="manifestacion" target="_blank" href="https://www.tiktok.com/tag/manifestacion?refer=embed">#Manifestacion</a> <a title="magiacotidiana" target="_blank" href="https://www.tiktok.com/tag/magiacotidiana?refer=embed">#MagiaCotidiana</a> <a title="ritualfacil" target="_blank" href="https://www.tiktok.com/tag/ritualfacil?refer=embed">#RitualFacil</a> <a title="hechizosdeamor" target="_blank" href="https://www.tiktok.com/tag/hechizosdeamor?refer=embed">#HechizosDeAmor</a> <a title="proteccionespiritual" target="_blank" href="https://www.tiktok.com/tag/proteccionespiritual?refer=embed">#ProteccionEspiritual</a> <a title="magiablanca" target="_blank" href="https://www.tiktok.com/tag/magiablanca?refer=embed">#MagiaBlanca</a> <a title="brujerianatural" target="_blank" href="https://www.tiktok.com/tag/brujerianatural?refer=embed">#BrujeriaNatural</a> <a title="ritualdeprosperidad" target="_blank" href="https://www.tiktok.com/tag/ritualdeprosperidad?refer=embed">#RitualDeProsperidad</a> <a title="brujasreales" target="_blank" href="https://www.tiktok.com/tag/brujasreales?refer=embed">#brujasreales</a> <a target="_blank" title="♬ sonido original - El Ojo Del Cuervo" href="https://www.tiktok.com/music/sonido-original-7441508607214045984?refer=embed">♬ sonido original - El Ojo Del Cuervo</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Ritual de Agradecimiento</h3>
+                            <p class="video-description">Descubre cómo la gratitud puede transformar tu día a día.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="/api/placeholder/250/444" alt="Video thumbnail">
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lectura de Runas</h3>
+                            <p class="video-description">Interpretación profunda de las runas del cuervo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-section">
+                <h2 class="section-title">Próximos Directos</h2>
+                <div class="schedule-item">
+                    <div class="schedule-date">Lunes 20:00</div>
+                    <div class="schedule-topic">Lectura de Runas en Directo</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-date">Jueves 19:00</div>
+                    <div class="schedule-topic">Ritual de Luna Nueva</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-date">Domingo 18:00</div>
+                    <div class="schedule-topic">Preguntas y Respuestas</div>
+                </div>
+            </div>
+
+            <div class="topics-section">
+                <h2 class="section-title">Temas que Exploramos</h2>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="topic-icon">🔮</div>
+                        <h3>Runas del Cuervo</h3>
+                        <p>Lecturas e interpretaciones profundas para guiar tu camino.</p>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-icon">✨</div>
+                        <h3>Rituales</h3>
+                        <p>Prácticas para conectar con tu ser interior y encontrar equilibrio.</p>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-icon">🌙</div>
+                        <h3>Bienestar Emocional</h3>
+                        <p>Consejos y reflexiones para tu desarrollo personal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
