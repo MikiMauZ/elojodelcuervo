@@ -109,19 +109,24 @@
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2rem;
+            width: 250px; /* Ajusta según tu diseño */
+            text-align: center; /* Centra el texto */
+            padding: 12px 20px; /* Ajusta el padding */
             background-color: var(--color-secondary);
             color: var(--color-accent);
             text-decoration: none;
             border: 2px solid var(--color-accent);
             border-radius: 5px;
             transition: all 0.3s ease;
-            font-family: 'Cinzel', serif;
+            margin-bottom: 15px; /* Espacio entre botones */
         }
-
         .cta-button:hover {
             background-color: var(--color-primary);
             box-shadow: 0 0 15px rgba(201, 176, 55, 0.3);
+        }
+
+        .cta-button:last-child {
+            margin-bottom: 0; /* Elimina margen del último botón */
         }
 
         @media (max-width: 768px) {
