@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - El Ojo del Cuervo</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contacto-container {
+      margin-top: 120px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+    }
+
+    .contacto-container h1 {
+      text-align: center;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .mini-guia {
+      background-color: rgba(201, 176, 55, 0.05);
+      border-left: 3px solid var(--color-accent);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .mini-guia h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .mini-guia ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+    }
+
+    form {
+      background: rgba(44, 4, 71, 0.7);
+      padding: 2rem;
+      border: 2px solid var(--color-accent);
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      resize: vertical;
+      border-radius: 5px;
+      border: 1px solid #c9b037;
+      background-color: #1a0326;
+      color: #fff;
+    }
+
+    .submit-button {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 10px 20px;
+      font-family: 'Cinzel', serif;
+      background-color: var(--color-secondary);
+      color: var(--color-accent);
+      border: 2px solid var(--color-accent);
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: var(--color-primary);
+      box-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">El Ojo del Cuervo</a>
+      <nav class="nav-menu">
+        <a href="index.html">Inicio</a>
+        <a href="runas.html">Runas</a>
+        <a href="rituales.html">Rituales</a>
+        <a href="blog.html">Blog</a>
+        <a href="horoscopo.html">Horóscopo</a>
+        <a href="contacto.html" class="active">Contacto</a>
+        <a href="tiktok.html">TikTok</a>
+      </nav>
+      <button class="menu-button">☰</button>
+    </div>
+  </header>
+
+  <div class="contacto-container">
+    <h1>Contacto</h1>
+
+    <div class="mini-guia">
+      <h2>¿Qué puedes consultarnos?</h2>
+      <ul>
+        <li>Solicitar una tirada personalizada con las Runas del Cuervo</li>
+        <li>Interpretaciones más profundas sobre tu horóscopo semanal</li>
+        <li>Asesoramiento para rituales o simbología personal</li>
+        <li>Colaboraciones, propuestas o ideas para el canal</li>
+      </ul>
+    </div>
+
+    <form action="mailto:elojodelcuervoyt@gmail.com" method="POST" enctype="text/plain">
+      <label for="mensaje">Tu mensaje</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu consulta..."></textarea>
+      <button type="submit" class="submit-button">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navMenu = document.querySelector('.nav-menu');
+    menuButton.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+    window.addEventListener('scroll', () => {
+      navMenu.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
