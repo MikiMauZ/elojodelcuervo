@@ -1,55 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuando el alma susurra - El Ojo del Cuervo</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      background-color: #0b0b0b;
-      color: #f0e6d2;
-      font-family: 'Cinzel', serif;
-      line-height: 1.6;
-      padding: 2rem;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .autor {
-      text-align: center;
-      font-size: 1rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-    p {
-      margin-bottom: 1.2rem;
-    }
-    .resaltado {
-      color: #e0a96d;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuando el alma susurra - El Ojo del Cuervo</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Igual que en el artículo original, se reutiliza el mismo estilo en línea */
+        /* (Puedes eliminar este bloque si ya está en styles.css) */
+        .post-container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .post-header { text-align: center; margin-bottom: 50px; }
+        .post-title {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(201, 176, 55, 0.3);
+        }
+        .post-meta { color: var(--color-accent); font-size: 1rem; margin-bottom: 2rem; }
+        .post-meta span { margin: 0 10px; }
+        .post-image {
+            width: 100%;
+            height: 400px;
+            background: rgba(74, 11, 114, 0.3);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .post-content {
+            background: rgba(44, 4, 71, 0.7);
+            border: 2px solid var(--color-accent);
+            border-radius: 10px;
+            padding: 40px;
+            line-height: 1.8;
+        }
+        .post-content p { margin-bottom: 1.5rem; }
+        .post-content h2 {
+            color: var(--color-accent);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+        .highlight-box {
+            background: rgba(201, 176, 55, 0.1);
+            border-left: 3px solid var(--color-accent);
+            padding: 20px;
+            margin: 2rem 0;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            text-align: center;
+            margin: 2rem 0;
+            padding: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--color-text); }
+    </style>
 </head>
 <body>
-  <h1>Cuando el alma susurra</h1>
-  <div class="autor">Por El Ojo del Cuervo</div>
+    <header class="header">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">El Ojo del Cuervo</a>
+            <nav class="nav-menu">
+                <a href="../index.html">Inicio</a>
+                <a href="../runas.html">Runas</a>
+                <a href="../rituales.html">Rituales</a>
+                <a href="../blog.html" class="active">Blog</a>
+                <a href="../tiktok.html">TikTok</a>
+            </nav>
+            <button class="menu-button">☰</button>
+        </div>
+    </header>
 
-  <p>Hay momentos en los que todo parece en silencio. El mundo gira, las personas corren, el tiempo no se detiene… pero dentro de ti, algo se queda quieto. Es como un susurro leve que apenas se escucha, pero que insiste. No es ruido. No es pensamiento. Es el alma, intentando hablarte.</p>
+    <div class="post-container">
+        <a href="../blog.html" class="back-link">← Volver al Blog</a>
 
-  <p>Vivimos tan rodeados de ruido externo que a veces olvidamos cómo suena nuestra propia voz interior. Pero en lo más profundo, cada uno de nosotros guarda una brújula, un eco suave que sabe hacia dónde debemos ir, incluso cuando nuestra mente se pierde.</p>
+        <article class="post-content">
+            <header class="post-header">
+                <h1 class="post-title">Cuando el alma susurra</h1>
+                <div class="post-meta">
+                    <span class="date">17 Abril, 2025</span>
+                    <span class="author">Por El Ojo del Cuervo</span>
+                </div>
+            </header>
 
-  <p class="resaltado">¿Y si ese malestar que no sabes explicar no fuera más que el alma pidiendo ser escuchada?</p>
+            <div class="post-image">
+                <img src="images/soul-whisper-mystic-path.jpg" alt="Cuando el alma susurra">
+            </div>
 
-  <p>Escuchar al alma no siempre es fácil. A veces sus mensajes llegan envueltos en incomodidad, dudas, emociones intensas o sueños que no entendemos. Pero ahí está la clave: <span class="resaltado">lo que molesta, señala. Lo que emociona, guía.</span></p>
+            <p>A veces, el silencio no es vacío. Es un espacio sagrado donde el alma, suavemente, nos habla. No con palabras ruidosas, sino con emociones sutiles, intuiciones suaves, y ese nudo en el estómago que no entendemos pero que insiste.</p>
 
-  <p>Una runa, una carta, un momento de silencio… todo puede ser un espejo. Y cuando dejamos de huir de nosotros mismos y empezamos a mirar hacia dentro, encontramos respuestas que siempre estuvieron ahí, esperando.</p>
+            <div class="quote">"El alma no grita, susurra. Escucharla es un arte olvidado."</div>
 
-  <p>Hoy, detente un instante. No para pensar, sino para sentir. Tal vez ese susurro te esté recordando quién eres. Tal vez te esté invitando a volver a casa.</p>
+            <h2>La voz interior olvidada</h2>
+            <p>En un mundo lleno de estímulos, olvidamos que también hay una voz interna que merece ser escuchada. Esa voz no busca atención, solo verdad. Nos llama cuando algo no encaja, cuando sentimos nostalgia sin motivo, o cuando una decisión se siente pesada aunque sea “lógica”.</p>
 
-  <p class="resaltado">Con los ojos del cuervo vemos más allá. El alma siempre está hablando. La pregunta es: ¿estás escuchando?</p>
+            <div class="highlight-box">
+                <strong>Reflexión:</strong> ¿Cuántas veces has ignorado esa sensación interior solo por seguir el camino más seguro o esperado?
+            </div>
 
+            <h2>Cuando el alma duele</h2>
+            <p>No todo malestar es físico o mental. A veces, el alma duele porque hemos dejado de prestarle atención. Porque vivimos para afuera, para lo urgente, y nos olvidamos de lo esencial. Pero esa incomodidad puede ser una guía: una brújula que apunta hacia lo que sí necesitamos.</p>
+
+            <h2>Volver al centro</h2>
+            <p>Escuchar al alma no requiere rituales complejos. A veces basta con detenerse, respirar, y preguntarse: ¿qué siento realmente? ¿Qué parte de mí está pidiendo ser mirada, abrazada, reconocida?</p>
+
+            <div class="highlight-box">
+                <p>El alma no busca soluciones rápidas. Busca presencia. Busca que estés contigo, sin máscaras ni excusas.</p>
+            </div>
+
+            <div class="quote">"Con los ojos del cuervo vemos más allá. Y en ese más allá, también nos reencontramos."</div>
+
+            <h2>Una invitación suave</h2>
+            <p>Hoy, regálate unos minutos de silencio. No para pensar, sino para sentir. No para resolver, sino para habitarte. Tal vez descubras que el susurro que sentías… eras tú mismo llamándote a casa.</p>
+        </article>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            navMenu.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
