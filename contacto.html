@@ -99,32 +99,37 @@
         <a href="rituales.html">Rituales</a>
         <a href="blog.html">Blog</a>
         <a href="horoscopo.html">Horóscopo</a>
-        <a href="tiktok.html">TikTok</a>
         <a href="contacto.html" class="active">Contacto</a>
+        <a href="tiktok.html">TikTok</a>
       </nav>
       <button class="menu-button">☰</button>
     </div>
   </header>
 
   <div class="contacto-container">
-    <h1>Contacto</h1>
-
-    <div class="mini-guia">
-      <h2>¿Qué puedes consultarnos?</h2>
-      <ul>
-        <li>Solicitar una tirada personalizada con las Runas del Cuervo</li>
-        <li>Interpretaciones más profundas sobre tu horóscopo semanal</li>
-        <li>Asesoramiento para rituales o simbología personal</li>
-        <li>Colaboraciones, propuestas o ideas para el canal</li>
+    <h1 style="text-align:center; font-family: 'MedievalSharp', cursive; color: var(--color-accent); font-size: 2.5rem;">
+      Contacto - El Ojo del Cuervo
+    </h1>
+  
+    <div class="mini-guia" style="background-color: rgba(201, 176, 55, 0.05); border-left: 3px solid var(--color-accent); padding: 1rem 1.5rem; margin: 2rem 0;">
+      <h2 style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--color-accent);">¿Qué puedes consultarnos?</h2>
+      <ul style="padding-left: 1.5rem;">
+        <li>Tiradas personalizadas con las Runas del Cuervo</li>
+        <li>Interpretaciones ampliadas del horóscopo semanal</li>
+        <li>Guía para rituales, símbolos o preguntas espirituales</li>
+        <li>Ideas, propuestas o colaboraciones con el canal</li>
       </ul>
     </div>
-
-    <form action="mailto:elojodelcuervoyt@gmail.com" method="POST" enctype="text/plain">
-      <label for="mensaje">Tu mensaje</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu consulta..."></textarea>
-      <button type="submit" class="submit-button">Enviar</button>
-    </form>
+  
+    <div class="formulario-externo" style="border: 2px solid var(--color-accent); border-radius: 10px; overflow: hidden;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSctpWvH41jF_IPW44p7n6-fmshfMM9VzUClgWsH-PLp4rIzgQ/viewform?embedded=true"
+        width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
+        style="background-color: #1a0326;">
+        Cargando…
+      </iframe>
+    </div>
   </div>
+  
 
   <script>
     const menuButton = document.querySelector('.menu-button');
